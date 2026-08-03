@@ -539,7 +539,7 @@
                 <div style="font-family: var(--font-display); font-size: 24px; font-weight: 400; color: var(--fg); margin-bottom: 8px;">Milestones & Impact</div>
                 <div class="stat-grid">
                     <div class="stat-item">
-                        <div class="stat-number">4,200+</div>
+                        <div class="stat-number">{{ $totalBooks }}</div>
                         <div class="stat-label">Curated Volumes</div>
                     </div>
                     <div class="stat-item">
@@ -547,7 +547,7 @@
                         <div class="stat-label">Reader Satisfaction</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">45+</div>
+                        <div class="stat-number">{{ $globalPublishers }}</div>
                         <div class="stat-label">Global Publishers</div>
                     </div>
                     <div class="stat-item">

@@ -691,7 +691,7 @@
         </div>
     </section>
 
-    <div class="section-container">
+    <div class="section-container" id="featured-books">
         <div class="section-header">
             <div class="section-title-group">
                 <span>Handpicked Selection</span>
@@ -729,6 +729,24 @@
             <p style="color: var(--muted); grid-column: span 4; text-align: center; padding: 40px;">No books available yet.</p>
             @endforelse
         </div>
+
+        @if($books->hasPages())
+        <div style="margin-top: 40px; display: flex; justify-content: center; align-items: center; gap: 16px;">
+            @if($books->onFirstPage())
+                <span class="btn-outline" style="opacity: 0.5; cursor: not-allowed; padding: 10px 20px; font-size: 14px; font-weight: 600; border-radius: 8px; text-decoration: none; color: var(--muted); border: 1px solid var(--border);">Previous</span>
+            @else
+                <a href="{{ $books->previousPageUrl() }}#featured-books" class="btn-outline" style="padding: 10px 20px; font-size: 14px; font-weight: 600; border-radius: 8px; text-decoration: none; color: var(--fg); border: 1px solid var(--border); transition: all 0.2s;">Previous</a>
+            @endif
+
+            <span style="color: var(--muted); font-size: 14px;">Page {{ $books->currentPage() }} of {{ $books->lastPage() }}</span>
+
+            @if($books->hasMorePages())
+                <a href="{{ $books->nextPageUrl() }}#featured-books" class="btn-outline" style="padding: 10px 20px; font-size: 14px; font-weight: 600; border-radius: 8px; text-decoration: none; color: var(--fg); border: 1px solid var(--border); transition: all 0.2s;">Next</a>
+            @else
+                <span class="btn-outline" style="opacity: 0.5; cursor: not-allowed; padding: 10px 20px; font-size: 14px; font-weight: 600; border-radius: 8px; text-decoration: none; color: var(--muted); border: 1px solid var(--border);">Next</span>
+            @endif
+        </div>
+        @endif
     </div>
 
     <footer>

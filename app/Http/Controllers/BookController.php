@@ -9,13 +9,18 @@ use Illuminate\Http\Request;
 class BookController extends Controller
 {
     public function home(Request $request){
-        $books = Book::orderBy('id', 'desc')->take(6)->get();
+        $books = Book::orderBy('id', 'desc')->paginate(8);
         $heroBook = Book::orderBy('id', 'desc')->first();
         return view("index", ['books' => $books, 'heroBook' => $heroBook]);
     }
 
     public function about(){
-        return view("about");
+        $totalBooks = Book::count();
+        $globalPublishers = Book::distinct('created_by')->count('created_by');
+        return view("about", [
+            'totalBooks' => $totalBooks,
+            'globalPublishers' => $globalPublishers
+        ]);
     }
 
     public function books(Request $request){
