@@ -301,7 +301,11 @@
                     <span>✦</span> First Collector's Edition
                 </div>
                 <h1>{{ $book->title }}</h1>
-                <div class="book-author-meta">Created & Curated by <strong>{{ $book->created_by }}</strong></div>
+                <div class="book-author-meta">Created & Curated by <span style="color: var(--accent); font-weight: 700;">{{ $book->created_by }}</span></div>
+
+                <div style="font-family: var(--font-display); font-size: 38px; color: var(--accent); font-weight: 600; margin: 8px 0;">
+                    ${{ number_format($book->price ?? 29.99, 2) }}
+                </div>
 
                 <div class="book-description">
                     <p>{{ $book->description ?? 'No detailed synopsis has been provided for this volume yet. Each edition is carefully crafted with archival-grade paper, Smyth-sewn binding, and bespoke typography.' }}</p>

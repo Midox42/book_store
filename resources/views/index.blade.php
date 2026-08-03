@@ -705,7 +705,7 @@
             <a href="{{ route('books.show', $book->id) }}" class="book-card">
                 @if($book->cover_image)
                 <div style="height: 280px; border-radius: 10px; overflow: hidden; background: #000; position: relative;">
-                    <img src="{{ Storage::url($book->cover_image) }}" alt="{{ $book->title }}" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="{{ asset('/' . $book->cover_image) }}" alt="{{ $book->title }}" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <div style="margin-top: 4px;">
                     <h4 style="font-size: 18px; font-weight: 650; color: var(--fg);">{{ $book->title }}</h4>
