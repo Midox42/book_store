@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('posts', function (Blueprint $table) {
-            $table->id();
-            $table->string('title', 100);
-            $table->text('description')->nullable();
-            $table->string('created_by', 100);
-            $table->timestamps();
+        Schema::create('book_genre', function (Blueprint $table) {
+            $table->foreignId('book_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('genre_id')->constrained()->cascadeOnDelete();
+            $table->primary(['book_id', 'genre_id']); // Ensures no duplicate book-genre assignments
         });
     }
 
@@ -25,7 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('posts');
-       ;
+        Schema::dropIfExists('book_genre');
     }
 };
