@@ -10,7 +10,8 @@ class BookController extends Controller
 {
     public function home(Request $request){
         $books = Book::orderBy('id', 'desc')->take(6)->get();
-        return view("index", ['books' => $books]);
+        $heroBook = Book::orderBy('id', 'desc')->first();
+        return view("index", ['books' => $books, 'heroBook' => $heroBook]);
     }
 
     public function about(){
@@ -41,12 +42,22 @@ class BookController extends Controller
         $validated = $request->validate([
         'title' => ['required', 'string', 'min:3', 'max:100'],
         'created_by' => ['required', 'string', 'min:2', 'max:100'],
+        'price'       => 'required|numeric|min:0',
         'description' => ['nullable', 'string'],
+        'cover_image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp', 'max:5120'],
         ]);
+        if ($request->hasFile('cover_image')) {
+        // Saves to storage/app/public/covers/
+        $validated['cover_image'] = $request->file('cover_image')->store('covers', 'public');
+    }
+
 
         $validated['description'] = !empty($validated['description']) ? $validated['description'] : null;
 
-        Book::create($validated);
+        $book = Book::create($validated);
+        if ($request->has('genres')) {
+        $book->genres()->sync($request->genres);
+        }
 
         return redirect()->route('books')->with('success', 'Book created successfully');
     }
@@ -60,19 +71,31 @@ class BookController extends Controller
         $validated = $request->validate([
         'title' => ['required', 'string', 'min:3', 'max:100'],
         'created_by' => ['required', 'string', 'min:2', 'max:100'],
+        'price'       => 'required|numeric|min:0',
         'description' => ['nullable', 'string'],
+        'cover_image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp', 'max:5120'],
     ]);
 
-        $book = Book::findOrFail($id);
-        $book->update($validated);
+    $book = Book::findOrFail($id);
 
-        return redirect()->route('books')->with('success', 'Book updated successfully');
+    if ($request->hasFile('cover_image')) {
+        // Delete old cover image if it exists
+        if ($book->cover_image) {
+            Storage::disk('public')->delete($book->cover_image);
+        }
+        // Save the new file
+        $validated['cover_image'] = $request->file('cover_image')->store('covers', 'public');
     }
 
-    public function destroy($id){
-        $book = Book::findOrFail($id);
-        $book->delete();
-        return redirect()->route('books')->with('success', 'Book deleted successfully');
+    $validated['description'] = !empty($validated['description']) ? $validated['description'] : null;
+
+    $book->update($validated);
+
+    if ($request->has('genres')) {
+        $book->genres()->sync($request->genres);
+    }
+
+    return redirect()->route('books')->with('success', 'Book updated successfully');
     }
 }
 

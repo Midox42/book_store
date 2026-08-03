@@ -373,6 +373,18 @@
         <div class="books-grid">
             @foreach($books as $book)
                 <a href="{{ route('books.show', $book->id) }}" class="book-card">
+                    @if($book->cover_image)
+                    <div style="height: 260px; border-radius: 10px; overflow: hidden; background: #000; position: relative;">
+                        
+                        <img src="{{ asset('/' . $book->cover_image) }}" alt="{{ $book->title }}" style="width: 100%; height: 100%; object-fit: cover;">
+                    
+                    </div>
+                    <div class="book-card-info" style="margin-top: 4px;">
+                        <span class="book-genre">By {{ $book->created_by }}</span>
+                        <h4>{{ $book->title }}</h4>
+                        <p>{{ $book->description ?? 'No synopsis provided for this volume yet.' }}</p>
+                    </div>
+                    @else
                     <div class="book-card-thumb">
                         <h3>{{ $book->title }}</h3>
                     </div>
@@ -381,8 +393,9 @@
                         <h4>{{ $book->title }}</h4>
                         <p>{{ $book->description ?? 'No synopsis provided for this volume yet.' }}</p>
                     </div>
+                    @endif
                     <div class="book-card-footer">
-                        <span class="book-author">By {{ $book->created_by }}</span>
+                        <span class="book-author">${{ number_format($book->price ?? 45.00, 2) }}</span>
                         <div class="btn-icon">→</div>
                     </div>
                 </a>

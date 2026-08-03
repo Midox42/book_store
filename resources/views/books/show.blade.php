@@ -283,11 +283,17 @@
     <main class="main-container">
         <div class="detail-grid">
             <div class="book-cover-showcase">
-                <div class="book-mockup">
-                    <div style="font-size: 11px; font-weight: 700; color: #6b7280; text-transform: uppercase;">Vol. #{{ $book->id }}</div>
-                    <h2>{{ $book->title }}</h2>
-                    <div style="font-size: 11px; font-weight: 700; color: var(--accent); text-align: right;">Bibliotheca</div>
-                </div>
+                @if($book->cover_image)
+                    <div style="width: 260px; height: 380px; border-radius: 12px; overflow: hidden; box-shadow: -20px 30px 60px rgba(0,0,0,0.6); background: #000;">
+                        <img src="{{ asset('/' . $book->cover_image) }}" alt="{{ $book->title }}" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                @else
+                    <div class="book-mockup">
+                        <div style="font-size: 11px; font-weight: 700; color: #6b7280; text-transform: uppercase;">Vol. #{{ $book->id }}</div>
+                        <h2>{{ $book->title }}</h2>
+                        <div style="font-size: 11px; font-weight: 700; color: var(--accent); text-align: right;">Bibliotheca</div>
+                    </div>
+                @endif
             </div>
 
             <div class="book-info-section">

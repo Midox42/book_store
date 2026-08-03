@@ -18,6 +18,7 @@ return new class extends Migration
                 'price'       => 19.99,
                 'created_by'  => 'Cuttlefish That Loves Diving',
                 'genres'      => ['Fantasy', 'Mystery'],
+                'cover_image' => 'covers\LOTM.jpg'
             ],
             [
                 'title'       => 'Omniscient Reader\'s Viewpoint',
@@ -25,6 +26,7 @@ return new class extends Migration
                 'price'       => 14.99,
                 'created_by'  => 'singNsong',
                 'genres'      => ['Sci-Fi', 'Fantasy'],
+                'cover_image' => 'covers\ORV.jpg'
             ],
             [
                 'title'       => 'Solo Leveling',
@@ -32,6 +34,7 @@ return new class extends Migration
                 'price'       => 12.99,
                 'created_by'  => 'Chugong',
                 'genres'      => ['Action', 'Fantasy'],
+                'cover_image' => 'covers\SL.jpg'
             ],
             [
                 'title'       => 'The Beginning After the End',

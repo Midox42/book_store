@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->decimal('price', 8, 2);
             $table->string('created_by', 100);
+            $table->string('cover_image')->nullable();
             $table->timestamps();
         });
     }

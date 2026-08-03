@@ -285,7 +285,7 @@
         </div>
 
         <div class="form-card">
-            <form action="{{ route('books.store') }}" method="book">
+            <form action="{{ route('books.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group">
@@ -317,8 +317,8 @@
                         <input type="number" step="0.01" class="form-control" id="price" name="price" placeholder="28.00" required>
                     </div>
                     <div class="form-group">
-                        <label for="cover_url" class="form-label">Cover Image URL <span class="optional">(optional)</span></label>
-                        <input type="url" class="form-control" id="cover_url" name="cover_url" placeholder="https://example.com/cover.jpg">
+                        <label for="cover_image" class="form-label">Cover Image File <span class="optional">(optional)</span></label>
+                        <input type="file" class="form-control" id="cover_image" name="cover_image" accept="image/*" style="padding: 10px;">
                     </div>
                 </div>
 

@@ -632,8 +632,8 @@
             <h1>Where Stories Take <i>Form.</i></h1>
             <p>Immerse yourself in world-class typography, design monographs, and timeless fiction. Crafted for discerning readers and collectors.</p>
             <div class="hero-ctas">
-                <a href="books.html" class="btn">Explore Catalog</a>
-                <a href="about.html" class="btn-outline">Our Philosophy</a>
+                <a href="{{ route('books') }}" class="btn">Explore Catalog</a>
+                <a href="{{ route('about.us') }}" class="btn-outline">Our Philosophy</a>
             </div>
             <div class="stats-row">
                 <div class="stat-item">
@@ -655,27 +655,37 @@
                 <div class="book-3d">
                     <div class="book-spine-effect"></div>
                     <div class="book-pages-effect"></div>
-                    <div class="book-face-front">
-                        <div class="cover-top">
-                            <span>Vol. 01</span>
-                            <span>First Edition</span>
-                        </div>
-                        <div class="cover-main">
-                            <h2>The Architecture of Light</h2>
-                            <p>Spatial Aesthetics</p>
-                        </div>
-                        <div class="cover-footer">
-                            <span>Bibliotheca Press</span>
-                            <span>2026</span>
-                        </div>
+                    <div class="book-face-front" @if(isset($heroBook) && $heroBook->cover_image) style="padding: 0; background: #000; overflow: hidden; border-left: none;" @endif>
+                        @if(isset($heroBook) && $heroBook->cover_image)
+                            <img src="{{ Storage::url($heroBook->cover_image) }}" alt="{{ $heroBook->title }}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px 12px 12px 4px;">
+                        @else
+                            <div class="cover-top">
+                                <span>Vol. {{ $heroBook->id ?? '01' }}</span>
+                                <span>{{ $heroBook->created_by ?? 'Featured Author' }}</span>
+                            </div>
+                            <div class="cover-main">
+                                <h2>{{ $heroBook->title ?? 'The Architecture of Light' }}</h2>
+                                <p>{{ \Illuminate\Support\Str::limit($heroBook->description ?? 'Spatial Aesthetics', 40) }}</p>
+                            </div>
+                            <div class="cover-footer">
+                                <span>Bibliotheca Press</span>
+                                <span>${{ number_format($heroBook->price ?? 48.00, 2) }}</span>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
+            @if(isset($heroBook) && $heroBook->cover_image)
+            <div style="margin-top: 24px; text-align: center;">
+                <h2 style="font-family: var(--font-display); font-size: 32px; color: var(--fg); margin-bottom: 4px;">{{ $heroBook->title }}</h2>
+                <p style="color: var(--muted); font-size: 14px;">By {{ $heroBook->created_by }} &bull; ${{ number_format($heroBook->price, 2) }}</p>
+            </div>
+            @endif
             <div class="float-badge">
                 <div class="float-badge-icon">★</div>
                 <div class="float-badge-text">
-                    <h4>Editor's Choice</h4>
-                    <p>Rated 4.9 / 5.0 globally</p>
+                    <h4>{{ $heroBook->created_by ?? "Editor's Choice" }}</h4>
+                    <p>Author</p>
                 </div>
             </div>
         </div>
@@ -687,77 +697,49 @@
                 <span>Handpicked Selection</span>
                 <h2>Featured Masterpieces</h2>
             </div>
-            <a href="books.html" class="btn-outline">View Full Catalog →</a>
+            <a href="{{ route('books') }}" class="btn-outline">View Full Catalog →</a>
         </div>
 
         <div class="books-grid">
-            <a href="book-detail.html" class="book-card">
+            @forelse($books as $book)
+            <a href="{{ route('books.show', $book->id) }}" class="book-card">
+                @if($book->cover_image)
+                <div style="height: 280px; border-radius: 10px; overflow: hidden; background: #000; position: relative;">
+                    <img src="{{ Storage::url($book->cover_image) }}" alt="{{ $book->title }}" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="margin-top: 4px;">
+                    <h4 style="font-size: 18px; font-weight: 650; color: var(--fg);">{{ $book->title }}</h4>
+                    <p style="color: var(--muted); font-size: 13px; margin-top: 2px;">{{ \Illuminate\Support\Str::limit($book->description, 45) }}</p>
+                </div>
+                @else
                 <div class="book-card-thumb" style="border-left-color: #ff5c35;">
-                    <h3>The Architecture of Light</h3>
+                    <h3>{{ $book->title }}</h3>
                 </div>
                 <div class="book-card-info">
-                    <span class="book-genre">Design & Space</span>
-                    <h4>Spatial Aesthetics in Modernism</h4>
+                    <span class="book-genre">{{ $book->created_by }}</span>
+                    <h4>{{ \Illuminate\Support\Str::limit($book->description, 50) }}</h4>
                 </div>
+                @endif
                 <div class="book-card-footer">
-                    <span class="book-price">$48.00</span>
+                    <span class="book-price">${{ number_format($book->price ?? 45.00, 2) }}</span>
                     <div class="btn-icon">→</div>
                 </div>
             </a>
-
-            <a href="book-detail.html" class="book-card">
-                <div class="book-card-thumb" style="border-left-color: #3b82f6;">
-                    <h3>Chronicles of the Void</h3>
-                </div>
-                <div class="book-card-info">
-                    <span class="book-genre">Sci-Fi Masterwork</span>
-                    <h4>A Journey Beyond Known Stars</h4>
-                </div>
-                <div class="book-card-footer">
-                    <span class="book-price">$36.50</span>
-                    <div class="btn-icon">→</div>
-                </div>
-            </a>
-
-            <a href="book-detail.html" class="book-card">
-                <div class="book-card-thumb" style="border-left-color: #10b981;">
-                    <h3>Silent Echoes</h3>
-                </div>
-                <div class="book-card-info">
-                    <span class="book-genre">Poetry & Reflection</span>
-                    <h4>Verses on Solitude and Time</h4>
-                </div>
-                <div class="book-card-footer">
-                    <span class="book-price">$29.00</span>
-                    <div class="btn-icon">→</div>
-                </div>
-            </a>
-
-            <a href="book-detail.html" class="book-card">
-                <div class="book-card-thumb" style="border-left-color: #8b5cf6;">
-                    <h3>Digital Alchemy</h3>
-                </div>
-                <div class="book-card-info">
-                    <span class="book-genre">Technology & Art</span>
-                    <h4>The Future of Generative UI</h4>
-                </div>
-                <div class="book-card-footer">
-                    <span class="book-price">$54.00</span>
-                    <div class="btn-icon">→</div>
-                </div>
-            </a>
+            @empty
+            <p style="color: var(--muted); grid-column: span 4; text-align: center; padding: 40px;">No books available yet.</p>
+            @endforelse
         </div>
     </div>
 
     <footer>
         <div class="footer-top">
-            <a href="book-store-home.html" class="logo">Bibliotheca<span>.</span></a>
+            <a href="{{ route('index') }}" class="logo">Bibliotheca<span>.</span></a>
             <nav>
                 <ul>
-                    <li><a href="book-store-home.html">Home</a></li>
-                    <li><a href="books.html">Catalog</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="book-detail.html">Featured</a></li>
+                    <li><a href="{{ route('index') }}">Home</a></li>
+                    <li><a href="{{ route('books') }}">Catalog</a></li>
+                    <li><a href="{{ route('about.us') }}">About</a></li>
+                    <li><a href="{{ route('books', $heroBook->id ?? 1) }}">Featured</a></li>
                 </ul>
             </nav>
         </div>
