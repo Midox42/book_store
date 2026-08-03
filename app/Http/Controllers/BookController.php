@@ -1,15 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Post;
+use App\Models\book;
 
 
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class bookController extends Controller
 {
-    public function posts(Request $request){
-        $query = Post::orderBy('id', 'asc');
+    public function books(Request $request){
+        $query = book::orderBy('id', 'asc');
 
         if ($request->filled('search')) {
             $search = $request->input('search');
@@ -20,12 +20,12 @@ class PostController extends Controller
             });
         }
 
-        $posts = $query->get();
-        return view("posts.index", ['posts' => $posts]);
+        $books = $query->get();
+        return view("books.index", ['books' => $books]);
     }
 
     public function create(){
-        return view('posts.create');
+        return view('books.create');
     }
 
     public function store(Request $request){
@@ -37,14 +37,14 @@ class PostController extends Controller
 
         $validated['description'] = !empty($validated['description']) ? $validated['description'] : null;
 
-        Post::create($validated);
+        book::create($validated);
 
-        return redirect()->route('posts')->with('success', 'Post created successfully');
+        return redirect()->route('books')->with('success', 'book created successfully');
     }
 
     public function show($id){
-        $post = Post::findOrFail($id);
-        return view("posts.show", ['post' => $post]);
+        $book = book::findOrFail($id);
+        return view("books.show", ['book' => $book]);
     }
 
     public function update(Request $request, $id){
@@ -54,16 +54,16 @@ class PostController extends Controller
         'description' => ['nullable', 'string'],
     ]);
 
-        $post = Post::findOrFail($id);
-        $post->update($validated);
+        $book = book::findOrFail($id);
+        $book->update($validated);
 
-        return redirect()->route('posts')->with('success', 'Post updated successfully');
+        return redirect()->route('books')->with('success', 'book updated successfully');
     }
 
     public function destroy($id){
-        $post = Post::findOrFail($id);
-        $post->delete();
-        return redirect()->route('posts')->with('success', 'Post deleted successfully');
+        $book = book::findOrFail($id);
+        $book->delete();
+        return redirect()->route('books')->with('success', 'book deleted successfully');
     }
 }
 

@@ -1,19 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\http\Controllers\PostController;
+use App\http\Controllers\bookController;
 
 Route::get('/', function () {
     return view('welcome');
     })  ->name('welcome'); ;
 
-Route::get('/posts', [PostController::class, 'posts'])->name('posts');
-Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
-Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
-Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
-// Route::get('/posts/edit/{post}', [PostController::class, 'edit'])->name('posts.edit');
-Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
-Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+Route::get('/books', [bookController::class, 'books'])->name('books');
+Route::get('/books/create', [bookController::class, 'create'])->name('books.create');
+Route::book('/books', [bookController::class, 'store'])->name('books.store');
+Route::get('/books/{book}', [bookController::class, 'show'])->name('books.show');
+// Route::get('/books/edit/{book}', [bookController::class, 'edit'])->name('books.edit');
+Route::put('/books/{book}', [bookController::class, 'update'])->name('books.update');
+Route::delete('/books/{book}', [bookController::class, 'destroy'])->name('books.destroy');
 
 
 // About Us route
