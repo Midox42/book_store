@@ -43,7 +43,7 @@
                 justify-content: center;
             }
 
-            .welcome-container {
+            .index-container {
                 max-width: 1000px;
                 width: 100%;
                 background: rgba(255, 255, 255, 0.8);
@@ -55,14 +55,14 @@
             }
 
             @media (prefers-color-scheme: dark) {
-                .welcome-container {
+                .index-container {
                     background: rgba(30, 41, 59, 0.7);
                     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
                     border: 1px solid rgba(255, 255, 255, 0.05);
                 }
             }
 
-            .welcome-header h1 {
+            .index-header h1 {
                 font-size: 2.5rem;
                 font-weight: 800;
                 letter-spacing: -0.025em;
@@ -70,14 +70,14 @@
                 margin-bottom: 10px;
             }
 
-            .welcome-header p {
+            .index-header p {
                 color: #64748b;
                 font-size: 1.1rem;
                 margin-bottom: 30px;
             }
 
             @media (prefers-color-scheme: dark) {
-                .welcome-header p {
+                .index-header p {
                     color: #94a3b8;
                 }
             }
@@ -220,7 +220,7 @@
                 }
             }
 
-            .welcome-nav {
+            .index-nav {
                 display: flex;
                 gap: 12px;
                 align-items: center;
@@ -229,16 +229,16 @@
     </head>
     <body>
         <div class="page-shell">
-            <div class="welcome-container">
+            <div class="index-container">
                 @include('components.layout')
 
-                <header class="welcome-header d-flex justify-content-between align-items-center mb-5">
+                <header class="index-header d-flex justify-content-between align-items-center mb-5">
                     <div>
                         <h1>{{ config('app.name', 'Laravel') }}</h1>
-                        <p>Welcome to your modern application ecosystem.</p>
+                        <p>index to your modern application ecosystem.</p>
                     </div>
                     @if (Route::has('login'))
-                        <nav class="welcome-nav">
+                        <nav class="index-nav">
                             @auth
                                 <a href="{{ url('/dashboard') }}" class="btn-custom btn-primary-grad">
                                     Dashboard
@@ -260,7 +260,7 @@
 
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="welcome-content">
+                        <div class="index-content">
                             <h3 class="mb-3" style="font-weight: 700;">Let's get started</h3>
                             <p class="mb-4 text-muted">Laravel has an incredibly rich ecosystem. We suggest starting with the following resources to build your application.</p>
                             

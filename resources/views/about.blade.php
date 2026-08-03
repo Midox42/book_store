@@ -498,12 +498,12 @@
 
     <!-- Navigation -->
     <header data-od-id="header">
-        <a href="{{ route('welcome') }}" class="logo">
+        <a href="{{ route('index') }}" class="logo">
             Bibliotheca<span>.</span>
         </a>
         <nav data-od-id="nav">
             <ul>
-                <li><a href="{{ route('welcome') }}">Home</a></li>
+                <li><a href="{{ route('index') }}">Home</a></li>
                 <li><a href="{{ route('books') }}">Catalog</a></li>
                 <li><a href="{{ route('about.us') }}" class="active">About Us</a></li>
             </ul>

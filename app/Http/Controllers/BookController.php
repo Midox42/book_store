@@ -10,7 +10,7 @@ class BookController extends Controller
 {
     public function home(Request $request){
         $books = Book::orderBy('id', 'desc')->take(6)->get();
-        return view("welcome", ['books' => $books]);
+        return view("index", ['books' => $books]);
     }
 
     public function about(){

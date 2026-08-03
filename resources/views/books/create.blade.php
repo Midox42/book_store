@@ -260,12 +260,12 @@
 
     <!-- Navigation -->
     <header data-od-id="main-nav">
-        <a href="{{ route('welcome') }}" class="logo">
+        <a href="{{ route('index') }}" class="logo">
             Bibliotheca<span>.</span>
         </a>
         <nav>
             <ul>
-                <li><a href="{{ route('welcome') }}">Home</a></li>
+                <li><a href="{{ route('index') }}">Home</a></li>
                 <li><a href="{{ route('books') }}">Catalog</a></li>
                 <li><a href="{{ route('about.us') }}">About</a></li>
                 <li><a href="{{ route('books.create') }}" class="active">Add Book</a></li>

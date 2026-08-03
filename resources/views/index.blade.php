@@ -610,10 +610,10 @@
     </div>
 
     <header>
-        <a href="{{ route('welcome') }}" class="logo">Bibliotheca<span>.</span></a>
+        <a href="{{ route('index') }}" class="logo">Bibliotheca<span>.</span></a>
         <nav>
             <ul>
-                <li><a href="{{ route('welcome') }}" class="active">Home</a></li>
+                <li><a href="{{ route('index') }}" class="active">Home</a></li>
                 <li><a href="{{ route('books') }}">Catalog</a></li>
                 <li><a href="{{ route('about.us') }}">About Us</a></li>
             </ul>
