@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
         });
         $genres = [
-            'Fiction',
+            'Romance',
             'Non-Fiction',
             'Sci-Fi',
             'Fantasy',

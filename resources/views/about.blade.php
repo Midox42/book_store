@@ -504,7 +504,7 @@
         <nav data-od-id="nav">
             <ul>
                 <li><a href="{{ route('welcome') }}">Home</a></li>
-                <li><a href="{{ route('posts') }}">Catalog</a></li>
+                <li><a href="{{ route('books') }}">Catalog</a></li>
                 <li><a href="{{ route('about.us') }}" class="active">About Us</a></li>
             </ul>
         </nav>

@@ -266,9 +266,9 @@
         <nav>
             <ul>
                 <li><a href="{{ route('welcome') }}">Home</a></li>
-                <li><a href="{{ route('posts') }}">Catalog</a></li>
+                <li><a href="{{ route('books') }}">Catalog</a></li>
                 <li><a href="{{ route('about.us') }}">About</a></li>
-                <li><a href="{{ route('posts.create') }}" class="active">Add Book</a></li>
+                <li><a href="{{ route('books.create') }}" class="active">Add Book</a></li>
             </ul>
         </nav>
         <div class="nav-actions">
@@ -285,7 +285,7 @@
         </div>
 
         <div class="form-card">
-            <form action="{{ route('posts.store') }}" method="POST">
+            <form action="{{ route('books.store') }}" method="book">
                 @csrf
 
                 <div class="form-group">
@@ -329,7 +329,7 @@
 
                 <div class="form-actions">
                     <button type="submit" class="btn-primary" style="flex: 1; padding: 14px;">Publish Book to Catalog</button>
-                    <a href="{{ route('posts') }}" class="btn-outline" style="padding: 14px 28px; text-align: center;">Cancel</a>
+                    <a href="{{ route('books') }}" class="btn-outline" style="padding: 14px 28px; text-align: center;">Cancel</a>
                 </div>
             </form>
         </div>

@@ -1,15 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\book;
+use App\Models\Book;
 
 
 use Illuminate\Http\Request;
 
-class bookController extends Controller
+class BookController extends Controller
 {
+    public function home(Request $request){
+        $books = Book::orderBy('id', 'desc')->take(6)->get();
+        return view("welcome", ['books' => $books]);
+    }
+
+    public function about(){
+        return view("about");
+    }
+
     public function books(Request $request){
-        $query = book::orderBy('id', 'asc');
+        $query = Book::orderBy('id', 'asc');
 
         if ($request->filled('search')) {
             $search = $request->input('search');
@@ -30,40 +39,40 @@ class bookController extends Controller
 
     public function store(Request $request){
         $validated = $request->validate([
-        'title' => ['required', 'string', 'min:5', 'max:100'],
-        'created_by' => ['required', 'string', 'min:5', 'max:100'],
+        'title' => ['required', 'string', 'min:3', 'max:100'],
+        'created_by' => ['required', 'string', 'min:2', 'max:100'],
         'description' => ['nullable', 'string'],
         ]);
 
         $validated['description'] = !empty($validated['description']) ? $validated['description'] : null;
 
-        book::create($validated);
+        Book::create($validated);
 
-        return redirect()->route('books')->with('success', 'book created successfully');
+        return redirect()->route('books')->with('success', 'Book created successfully');
     }
 
     public function show($id){
-        $book = book::findOrFail($id);
+        $book = Book::findOrFail($id);
         return view("books.show", ['book' => $book]);
     }
 
     public function update(Request $request, $id){
         $validated = $request->validate([
-        'title' => ['required', 'string', 'min:5', 'max:100'],
-        'created_by' => ['required', 'string', 'min:5', 'max:100'],
+        'title' => ['required', 'string', 'min:3', 'max:100'],
+        'created_by' => ['required', 'string', 'min:2', 'max:100'],
         'description' => ['nullable', 'string'],
     ]);
 
-        $book = book::findOrFail($id);
+        $book = Book::findOrFail($id);
         $book->update($validated);
 
-        return redirect()->route('books')->with('success', 'book updated successfully');
+        return redirect()->route('books')->with('success', 'Book updated successfully');
     }
 
     public function destroy($id){
-        $book = book::findOrFail($id);
+        $book = Book::findOrFail($id);
         $book->delete();
-        return redirect()->route('books')->with('success', 'book deleted successfully');
+        return redirect()->route('books')->with('success', 'Book deleted successfully');
     }
 }
 
