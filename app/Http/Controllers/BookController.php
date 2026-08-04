@@ -10,7 +10,7 @@ class BookController extends Controller
 {
     public function home(Request $request){
         $books = Book::orderBy('id', 'desc')->paginate(8);
-        $heroBook = Book::orderBy('id', 'desc')->first();
+        $heroBook = Book::inRandomOrder()->first();
         return view("index", ['books' => $books, 'heroBook' => $heroBook]);
     }
 

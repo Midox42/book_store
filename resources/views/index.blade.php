@@ -655,36 +655,36 @@
                 <div class="book-3d">
                     <div class="book-spine-effect"></div>
                     <div class="book-pages-effect"></div>
-                    <div class="book-face-front" @if(isset($Book) && $Book->cover_image) style="padding: 0; background: #000; overflow: hidden; border-left: none;" @endif>
-                        @if(isset($Book) && $Book->cover_image)
-                            <img src="{{ asset('/' . $book->cover_image) }}" alt="{{ $book->title }}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px 12px 12px 4px;">
+                    <div class="book-face-front" @if(isset($heroBook) && $heroBook->cover_image) style="padding: 0; background: #000; overflow: hidden; border-left: none;" @endif>
+                        @if(isset($heroBook) && $heroBook->cover_image)
+                            <img src="{{ asset('/' . $heroBook->cover_image) }}" alt="{{ $heroBook->title }}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px 12px 12px 4px;">
                         @else
                             <div class="cover-top">
-                                <span>Vol. {{ $book->id ?? '01' }}</span>
-                                <span>{{ $book->created_by ?? 'Featured Author' }}</span>
+                                <span>Vol. {{ $heroBook->id ?? '01' }}</span>
+                                <span>{{ $heroBook->created_by ?? 'Featured Author' }}</span>
                             </div>
                             <div class="cover-main">
-                                <h2>{{ $book->title ?? 'The Architecture of Light' }}</h2>
-                                <p>{{ \Illuminate\Support\Str::limit($book->description ?? 'Spatial Aesthetics', 40) }}</p>
+                                <h2>{{ $heroBook->title ?? 'The Architecture of Light' }}</h2>
+                                <p>{{ \Illuminate\Support\Str::limit($heroBook->description ?? 'Spatial Aesthetics', 40) }}</p>
                             </div>
                             <div class="cover-footer">
                                 <span>Bibliotheca Press</span>
-                                <span>${{ number_format($book->price ?? 48.00, 2) }}</span>
+                                <span>${{ number_format($heroBook->price ?? 48.00, 2) }}</span>
                             </div>
                         @endif
                     </div>
                 </div>
             </div>
-            @if(isset($book) && $book->cover_image)
+            @if(isset($heroBook) && $heroBook->cover_image)
             <div style="margin-top: 24px; text-align: center;">
-                <h2 style="font-family: var(--font-display); font-size: 32px; color: var(--fg); margin-bottom: 4px;">{{ $book->title }}</h2>
-                <p style="color: var(--muted); font-size: 14px;">By {{ $book->created_by }} &bull; ${{ number_format($book->price, 2) }}</p>
+                <h2 style="font-family: var(--font-display); font-size: 32px; color: var(--fg); margin-bottom: 4px;">{{ $heroBook->title }}</h2>
+                <p style="color: var(--muted); font-size: 14px;">By {{ $heroBook->created_by }} &bull; ${{ number_format($heroBook->price, 2) }}</p>
             </div>
             @endif
             <div class="float-badge">
                 <div class="float-badge-icon">★</div>
                 <div class="float-badge-text">
-                    <h4>{{ $book->created_by ?? "Editor's Choice" }}</h4>
+                    <h4>{{ $heroBook->created_by ?? "Editor's Choice" }}</h4>
                     <p>Author</p>
                 </div>
             </div>
