@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us — Bibliotheca</title>
+    <title>About Us — BK store</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -499,7 +499,7 @@
     <!-- Navigation -->
     <header data-od-id="header">
         <a href="{{ route('index') }}" class="logo">
-            Bibliotheca<span>.</span>
+            BK store<span>.</span>
         </a>
         <nav data-od-id="nav">
             <ul>
@@ -522,14 +522,14 @@
                 <span></span> Our Story & Mission
             </div>
             <h1>Crafting Sanctuaries for <span>Curious Minds</span></h1>
-            <p>Bibliotheca was founded on a simple belief: extraordinary books deserve an extraordinary digital home. We curate timeless literature, cutting-edge sci-fi, and transformative non-fiction for readers who value depth, design, and discovery.</p>
+            <p>BK store was founded on a simple belief: extraordinary books deserve an extraordinary digital home. We curate timeless literature, cutting-edge sci-fi, and transformative non-fiction for readers who value depth, design, and discovery.</p>
         </section>
 
         <!-- Story Grid Section -->
         <section class="story-section" data-od-id="story-section">
             <div class="story-content" data-od-id="story-content">
                 <h2>Built by Readers, for Readers</h2>
-                <p>Started in 2024 by a collective of indie publishers, typographers, and lifelong bibliophiles, Bibliotheca bridges the gap between traditional literary curation and modern digital aesthetics.</p>
+                <p>Started in 2024 by a collective of indie publishers, typographers, and lifelong bibliophiles, BK store bridges the gap between traditional literary curation and modern digital aesthetics.</p>
                 <p>We reject the cluttered noise of modern online storefronts. Instead, every volume in our collection is hand-selected for its prose, physical craftsmanship, and ability to shift perspectives.</p>
                 <div style="margin-top: 32px;">
                     <a href="books.html" class="btn">Explore Our Collection</a>
@@ -587,7 +587,7 @@
         <section class="team-section" data-od-id="team-section">
             <div class="section-header" data-od-id="section-header">
                 <h2>Meet the Curators</h2>
-                <p>The passionate minds behind Bibliotheca's collection and editorial vision.</p>
+                <p>The passionate minds behind BK store's collection and editorial vision.</p>
             </div>
             <div class="team-grid" data-od-id="team-grid">
                 <div class="team-card" data-od-id="team-member-1">
@@ -628,8 +628,8 @@
 
     <!-- Footer -->
     <footer data-od-id="footer">
-        <a href="book-store-home.html" class="logo" style="font-size: 24px;">Bibliotheca<span>.</span></a>
-        <p>&copy; 2026 Bibliotheca Publishing. All rights reserved.</p>
+        <a href="book-store-home.html" class="logo" style="font-size: 24px;">BK store<span>.</span></a>
+        <p>&copy; 2026 BK store Publishing. All rights reserved.</p>
         <ul class="footer-links">
             <li><a href="book-store-home.html">Home</a></li>
             <li><a href="books.html">Catalog</a></li>

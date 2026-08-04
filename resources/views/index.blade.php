@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bibliotheca — Discover Extraordinary Books</title>
+    <title>BK store — Discover Extraordinary Books</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -610,7 +610,7 @@
     </div>
 
     <header>
-        <a href="{{ route('index') }}" class="logo">Bibliotheca<span>.</span></a>
+        <a href="{{ route('index') }}" class="logo">BK store<span>.</span></a>
         <nav>
             <ul>
                 <li><a href="{{ route('index') }}" class="active">Home</a></li>
@@ -668,7 +668,7 @@
                                 <p>{{ \Illuminate\Support\Str::limit($heroBook->description ?? 'Spatial Aesthetics', 40) }}</p>
                             </div>
                             <div class="cover-footer">
-                                <span>Bibliotheca Press</span>
+                                <span>BK store Press</span>
                                 <span>${{ number_format($heroBook->price ?? 48.00, 2) }}</span>
                             </div>
                         @endif
@@ -751,7 +751,7 @@
 
     <footer>
         <div class="footer-top">
-            <a href="{{ route('index') }}" class="logo">Bibliotheca<span>.</span></a>
+            <a href="{{ route('index') }}" class="logo">BK store<span>.</span></a>
             <nav>
                 <ul>
                     <li><a href="{{ route('index') }}">Home</a></li>
@@ -762,7 +762,7 @@
             </nav>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Bibliotheca Press. All rights reserved.</p>
+            <p>&copy; 2026 BK store Press. All rights reserved.</p>
             <p>Designed with precision and exceptional typography.</p>
         </div>
     </footer>

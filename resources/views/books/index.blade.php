@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bibliotheca — Book Catalog</title>
+    <title>BK store — Book Catalog</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -335,7 +335,7 @@
     
     <header>
         <a href="{{ route('index') }}" class="logo">
-            Bibliotheca<span>.</span>
+            BK store<span>.</span>
         </a>
         <nav>
             <ul>
@@ -404,7 +404,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Bibliotheca. Crafted with the My Laravel Project design system.</p>
+        <p>&copy; 2026 BK store. Crafted with the My Laravel Project design system.</p>
     </footer>
 
 </body>
