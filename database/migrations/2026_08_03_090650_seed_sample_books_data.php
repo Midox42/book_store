@@ -42,48 +42,63 @@ return new class extends Migration
                 'price'       => 9.99,
                 'created_by'  => 'TurtleMe',
                 'genres'      => ['Fantasy', 'Action'],
+                'cover_image' => 'covers\TBATE.jpg'
             ],
             [
-                'title'       => 'Re:Zero − Starting Life in Another World',
-                'description' => 'Subaru Natsuki is suddenly summoned to another world. Lacking magical powers or extraordinary strength, his only ability is Return by Death, forcing him to relive tragic events.',
-                'price'       => 11.50,
-                'created_by'  => 'Tappei Nagatsuki',
-                'genres'      => ['Fantasy', 'Mystery'],
+                'title'       => 'Shadow Slave',
+                'description' => 'Growing up in the poverty-stricken outskirts of a futuristic world, Sunny is infected by the Nightmare Spell and forced to fight for survival in a dangerous, ancient realm.',
+                'price'       => 14.99,
+                'created_by'  => 'Guilty30',
+                'genres'      => ['Fantasy', 'Action'],
+                'cover_image' => 'covers\Shadow_Slave.jpeg'
             ],
             [
-                'title'       => 'The Legendary Mechanic',
-                'description' => 'A veteran gamer transmigrates into a sci-fi game world years before its official launch, utilizing his meta-knowledge to become a legendary master mechanic.',
-                'price'       => 15.00,
-                'created_by'  => 'Chao Shen Ji Xie Shi',
-                'genres'      => ['Sci-Fi', 'Action'],
+                'title'       => 'Dune',
+                'description' => 'Set on the desert planet Arrakis, young Paul Atreides must navigate politics, betrayal, and giant sandworms as his family assumes control of the universe\'s most valuable substance.',
+                'price'       => 18.00,
+                'created_by'  => 'Frank Herbert',
+                'genres'      => ['Sci-Fi', 'Fiction'],
+                'cover_image' => 'covers\Dune.jpg'
             ],
             [
-                'title'       => 'Mother of Learning',
-                'description' => 'Zorian is a quiet, reluctant mage student dragged into a one-month time loop right before a catastrophic invasion of his academy city. He must master magic to survive.',
-                'price'       => 8.99,
-                'created_by'  => 'Domagoj Kurmaić',
-                'genres'      => ['Fantasy', 'Mystery'],
-            ],
-            [
-                'title'       => 'The Greatest Estate Developer',
-                'description' => 'Civil engineering student Suho Kim wakes up inside a fantasy web novel as Lloyd Frontera, a lazy nobleman in debt. He uses engineering knowledge to rescue his family.',
-                'price'       => 13.50,
-                'created_by'  => 'BK_Moon',
-                'genres'      => ['Fiction', 'Fantasy'],
-            ],
-            [
-                'title'       => 'Trash of the Count\'s Family',
-                'description' => 'Kim Roksu transmigrates into a novel as Cale Henituse, a minor trash noble destined to get beaten up. He resolves to live a peaceful, rich life, but keeps getting dragged into epic events.',
+                'title'       => 'The Perfect Run',
+                'description' => 'Ryan "Quicksave" Romano can save his location and restart time upon death. Arriving in a chaotic city overrun by super-powered criminals, he aims to achieve a "perfect run."',
                 'price'       => 10.99,
-                'created_by'  => 'Yoo Ryeo Han',
-                'genres'      => ['Fantasy', 'Fiction'],
+                'created_by'  => 'Maxime J. Durand',
+                'genres'      => ['Sci-Fi', 'Action'],
+                'cover_image' => 'covers\TPR.jpg'
             ],
             [
-                'title'       => 'Atomic Habits',
-                'description' => 'A practical non-fiction framework for improving every day through small, incremental systems and habit loops rather than relying solely on willpower.',
-                'price'       => 16.99,
-                'created_by'  => 'James Clear',
+                'title'       => 'Pride and Prejudice',
+                'description' => 'A classic turbulent relationship between Elizabeth Bennet, the daughter of a country gentleman, and Fitzwilliam Darcy, a rich aristocratic landowner.',
+                'price'       => 7.99,
+                'created_by'  => 'Jane Austen',
+                'genres'      => ['Romance', 'Fiction'],
+                'cover_image' => 'covers\PAP.jpg'
+            ],
+            [
+                'title'       => 'The Silent Patient',
+                'description' => 'Alicia Berenson’s life seems perfect until she shoots her husband five times and never speaks another word. A criminal psychotherapist becomes obsessed with uncovering her motive.',
+                'price'       => 13.99,
+                'created_by'  => 'Alex Michaelides',
+                'genres'      => ['Mystery', 'Fiction'],
+                'cover_image' => 'covers\TSP.jpg'
+            ],
+            [
+                'title'       => 'Project Hail Mary',
+                'description' => 'Ryland Grace is the sole survivor on a desperate, last-chance mission to save Earth from an extinction-level event, but he must figure out how to do it with amnesia.',
+                'price'       => 16.50,
+                'created_by'  => 'Andy Weir',
+                'genres'      => ['Sci-Fi', 'Mystery'],
+                'cover_image' => 'covers\PHM.jpg'
+            ],
+            [
+                'title'       => 'Sapiens: A Brief History of Humankind',
+                'description' => 'A non-fiction journey exploring how Homo sapiens came to dominate the world through cognitive, agricultural, and scientific revolutions.',
+                'price'       => 17.99,
+                'created_by'  => 'Yuval Noah Harari',
                 'genres'      => ['Non-Fiction'],
+                'cover_image' => 'covers\Sapiens.jpg'
             ],
         ];
 
