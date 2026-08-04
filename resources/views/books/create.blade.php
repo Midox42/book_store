@@ -258,24 +258,7 @@
 </head>
 <body>
 
-    <!-- Navigation -->
-    <header data-od-id="main-nav">
-        <a href="{{ route('index') }}" class="logo">
-            BK store<span>.</span>
-        </a>
-        <nav>
-            <ul>
-                <li><a href="{{ route('index') }}">Home</a></li>
-                <li><a href="{{ route('books') }}">Catalog</a></li>
-                <li><a href="{{ route('about.us') }}">About</a></li>
-                <li><a href="{{ route('books.create') }}" class="active">Add Book</a></li>
-            </ul>
-        </nav>
-        <div class="nav-actions">
-            <a href="#" class="btn-outline">Log In</a>
-            <a href="#" class="btn-primary" style="padding: 10px 20px;">Sign Up</a>
-        </div>
-    </header>
+    @include('components.navbar')
 
     <!-- Main Container -->
     <main class="main-container" data-od-id="create-book-container">

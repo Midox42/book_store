@@ -333,22 +333,7 @@
 </head>
 <body>
     
-    <header>
-        <a href="{{ route('index') }}" class="logo">
-            BK store<span>.</span>
-        </a>
-        <nav>
-            <ul>
-                <li><a href="{{ route('index') }}">Home</a></li>
-                <li><a href="{{ route('books') }}" class="active">Catalog</a></li>
-                <li><a href="{{ route('about.us') }}">About</a></li>
-            </ul>
-        </nav>
-        <div class="nav-actions">
-            <a href="{{ route('login') }}" class="btn-outline">Log In</a>
-            <a href="{{ route('register') }}" class="btn-primary" style="padding: 10px 20px;">Sign Up</a>
-        </div>
-    </header>
+    @include('components.navbar')
 
     <main class="main-container">
         <div class="page-header">

@@ -337,9 +337,7 @@
     </style>
 </head>
 <body>
-    <div class="announcement-bar">
-        <span>New Release</span> Explore our curated collection of award-winning literature & design monographs.
-    </div>
+
 
     <header>
         <a href="{{ route('index') }}" class="logo">BK store<span>.</span></a>
