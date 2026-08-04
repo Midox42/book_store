@@ -264,6 +264,24 @@
 
     @include('components.navbar')
 
+            @if(session('success'))
+                <div id="toast-success" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-5 py-4 rounded-2xl bg-[#13161f] border border-emerald-500/30 text-emerald-400 shadow-2xl shadow-black/60 transition-all duration-300 transform translate-y-0 opacity-100">
+                    <div class="w-7 h-7 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-sm">✓</div>
+                    <span class="font-medium text-sm text-white">{{ session('success') }}</span>
+                    <button onclick="document.getElementById('toast-success').style.display='none'" class="ml-4 text-zinc-400 hover:text-white text-xs">✕</button>
+                </div>
+                <script>
+                    setTimeout(() => {
+                        const t = document.getElementById('toast-success');
+                        if(t) {
+                            t.style.opacity = '0';
+                            t.style.transform = 'translateY(10px)';
+                            setTimeout(() => t.remove(), 300);
+                        }
+                    }, 4000);
+                </script>
+            @endif
+
     <main class="main-container">
         <div class="detail-grid">
             <div class="book-cover-showcase">
@@ -296,7 +314,10 @@
                 </div>
 
                 <div class="action-row">
-                    <button type="button" class="btn-primary" onclick="alert('Successfully added {{ addslashes($book->title) }} to your reading collection!')">Add to Reading Cart</button>
+                    <form action="{{ route('cart.add', $book->id) }}" method="POST" style="display:inline;">
+                        @csrf
+                        <button type="submit" class="btn-primary">Add to Cart</button>
+                    </form>
                     <a href="{{ route('books') }}" class="btn-outline" style="padding: 12px 28px;">← Back to Catalog</a>
                 </div>
             </div>
