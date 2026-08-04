@@ -509,8 +509,8 @@
             </ul>
         </nav>
         <div class="nav-actions" data-od-id="nav-actions" style="display: flex; gap: 12px; align-items: center;">
-            <a href="#" class="btn-outline" style="padding: 10px 20px; font-size: 14px; font-weight: 600; border-radius: 8px; text-decoration: none; color: var(--fg); border: 1px solid var(--border); transition: all 0.2s;">Login</a>
-            <a href="#" class="btn" style="padding: 10px 20px; font-size: 14px; font-weight: 600; border-radius: 8px; text-decoration: none; background: var(--accent); color: #fff; transition: all 0.2s;">Sign Up</a>
+            <a href="{{ route('login') }}" class="btn-outline" style="padding: 10px 20px; font-size: 14px; font-weight: 600; border-radius: 8px; text-decoration: none; color: var(--fg); border: 1px solid var(--border); transition: all 0.2s;">Login</a>
+            <a href="{{ route('register') }}" class="btn" style="padding: 10px 20px; font-size: 14px; font-weight: 600; border-radius: 8px; text-decoration: none; background: var(--accent); color: #fff; transition: all 0.2s;">Sign Up</a>
         </div>
     </header>
 
@@ -628,12 +628,12 @@
 
     <!-- Footer -->
     <footer data-od-id="footer">
-        <a href="book-store-home.html" class="logo" style="font-size: 24px;">BK store<span>.</span></a>
+        <a href="{{ route('index') }}" class="logo" style="font-size: 24px;">BK store<span>.</span></a>
         <p>&copy; 2026 BK store Publishing. All rights reserved.</p>
         <ul class="footer-links">
-            <li><a href="book-store-home.html">Home</a></li>
-            <li><a href="books.html">Catalog</a></li>
-            <li><a href="about.html">About Us</a></li>
+            <li><a href="{{ route('index') }}">Home</a></li>
+            <li><a href="{{ route('books') }}">Catalog</a></li>
+            <li><a href="{{ route('about.us') }}">About Us</a></li>
         </ul>
     </footer>
 </body>

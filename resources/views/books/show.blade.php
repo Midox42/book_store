@@ -275,8 +275,8 @@
             </ul>
         </nav>
         <div class="nav-actions">
-            <a href="#" class="btn-outline">Log In</a>
-            <a href="#" class="btn-primary" style="padding: 10px 20px;">Sign Up</a>
+            <a href="{{ route('login') }}" class="btn-outline">Log In</a>
+            <a href="{{ route('register') }}" class="btn-primary" style="padding: 10px 20px;">Sign Up</a>
         </div>
     </header>
 

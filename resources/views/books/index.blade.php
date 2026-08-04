@@ -342,12 +342,11 @@
                 <li><a href="{{ route('index') }}">Home</a></li>
                 <li><a href="{{ route('books') }}" class="active">Catalog</a></li>
                 <li><a href="{{ route('about.us') }}">About</a></li>
-                <li><a href="{{ route('books.create') }}">Add Book</a></li>
             </ul>
         </nav>
         <div class="nav-actions">
-            <a href="#" class="btn-outline">Log In</a>
-            <a href="#" class="btn-primary" style="padding: 10px 20px;">Sign Up</a>
+            <a href="{{ route('login') }}" class="btn-outline">Log In</a>
+            <a href="{{ route('register') }}" class="btn-primary" style="padding: 10px 20px;">Sign Up</a>
         </div>
     </header>
 
