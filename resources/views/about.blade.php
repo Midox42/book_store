@@ -573,35 +573,35 @@
             </div>
             <div class="team-grid" data-od-id="team-grid">
                 <div class="team-card" data-od-id="team-member-1">
-                    <div class="team-avatar">EV</div>
+                    <div class="team-avatar">M4</div>
                     <div class="team-info">
-                        <div class="team-name">Elena Vance</div>
-                        <div class="team-role">Founder & Editor-in-Chief</div>
-                        <div class="team-bio">Former literary critic with a lifelong obsession for rare editions and typography.</div>
+                        <div class="team-name">Midox42</div>
+                        <div class="team-role">Web Development</div>
+                        <div class="team-bio">Architecting robust and responsive web solutions for digital publishing.</div>
                     </div>
                 </div>
                 <div class="team-card" data-od-id="team-member-2">
-                    <div class="team-avatar">MK</div>
+                    <div class="team-avatar">C2</div>
                     <div class="team-info">
-                        <div class="team-name">Marcus Kael</div>
-                        <div class="team-role">Head of Curation</div>
-                        <div class="team-bio">Sci-fi enthusiast and speculative fiction historian curating tomorrow's classics.</div>
+                        <div class="team-name">Curator 2</div>
+                        <div class="team-role">Generalist</div>
+                        <div class="team-bio">Supporting literary acquisition and curation workflows.</div>
                     </div>
                 </div>
                 <div class="team-card" data-od-id="team-member-3">
-                    <div class="team-avatar">SL</div>
+                    <div class="team-avatar">C3</div>
                     <div class="team-info">
-                        <div class="team-name">Sophia Lin</div>
-                        <div class="team-role">Lead Product Designer</div>
-                        <div class="team-bio">Crafting digital reading sanctuaries with rigorous attention to detail and calm UX.</div>
+                        <div class="team-name">Curator 3</div>
+                        <div class="team-role"></div>
+                        <div class="team-bio"></div>
                     </div>
                 </div>
                 <div class="team-card" data-od-id="team-member-4">
-                    <div class="team-avatar">JD</div>
+                    <div class="team-avatar">C4</div>
                     <div class="team-info">
-                        <div class="team-name">Julian Drake</div>
-                        <div class="team-role">Literary Relations</div>
-                        <div class="team-bio">Bridging independent presses worldwide to bring unique voices to our catalog.</div>
+                        <div class="team-name">Curator 4</div>
+                        <div class="team-role"></div>
+                        <div class="team-bio"></div>
                     </div>
                 </div>
             </div>
